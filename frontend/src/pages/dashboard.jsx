@@ -21,8 +21,8 @@ const Dashboard = () => {
     useEffect(() => {
         const getImages = async () => {
             try {
-                // const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/data/all/${user._id}`);
-                const response = await fetch(`http://localhost:8080/data/all/${user._id}`);
+                const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/data/all/${user._id}`);
+                // const response = await fetch(`http://localhost:8080/data/all/${user._id}`);
 
                 const data = await response.json();
 

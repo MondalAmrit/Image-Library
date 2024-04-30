@@ -34,15 +34,15 @@ export const Uploader = ({ openModal, uploadTick, setUploadTick }) => {
             formData.append('imageUrl', newUpload.imageUrl);
             formData.append('userId', user._id);
 
-            // const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/file/upload`, {
-            //     method: 'POST',
-            //     body: formData,
-            // })
-
-            const response = await fetch(`http://localhost:8080/file/upload`, {
+            const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/file/upload`, {
                 method: 'POST',
                 body: formData,
             })
+
+            // const response = await fetch(`http://localhost:8080/file/upload`, {
+            //     method: 'POST',
+            //     body: formData,
+            // })
 
             const data = await response.json();
 

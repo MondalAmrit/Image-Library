@@ -25,20 +25,20 @@ export const Login = () => {
             password: e.target.password.value
         }
         try {
-            // const res = await fetch(`${import.meta.env.VITE_SERVER_URL}/auth/log-in`, {
-            //     method: 'POST',
-            //     body: JSON.stringify(user),
-            //     headers: {
-            //         "Content-Type": "application/json",
-            //     },
-            // })
-            const res = await fetch(`http://localhost:8080/auth/log-in`, {
+            const res = await fetch(`${import.meta.env.VITE_SERVER_URL}/auth/log-in`, {
                 method: 'POST',
                 body: JSON.stringify(user),
                 headers: {
                     "Content-Type": "application/json",
                 },
             })
+            // const res = await fetch(`http://localhost:8080/auth/log-in`, {
+            //     method: 'POST',
+            //     body: JSON.stringify(user),
+            //     headers: {
+            //         "Content-Type": "application/json",
+            //     },
+            // })
             const data = await res.json();
             if (res.ok) {
                 dispatch({ type: 'LOGIN', payload: data.user });

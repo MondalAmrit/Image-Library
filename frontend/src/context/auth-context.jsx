@@ -28,8 +28,8 @@ export const AuthContextProvider = ({children})=>{
                     return;
                 }
                 
-                // const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/auth/check-user/${token}`);
-                const response = await fetch(`http://localhost:8080/auth/check-user/${token}`);
+                const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/auth/check-user/${token}`);
+                // const response = await fetch(`http://localhost:8080/auth/check-user/${token}`);
                 const data = await response.json();
                 
                 if(response.ok){
